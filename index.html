@@ -3,796 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio - Nguyễn Thanh Tiền</title>
+    <title>Nguyễn Thanh Tiền | Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary: #6366f1;
-            --primary-dark: #4f46e5;
-            --secondary: #0ea5e9;
-            --accent: #f59e0b;
-            --dark: #1e293b;
-            --darker: #0f172a;
-            --light: #f8fafc;
-            --gray: #64748b;
-            --card-bg: #ffffff;
-            --gradient: linear-gradient(135deg, #6366f1 0%, #8b5cf6 50%, #d946ef 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--light);
-            color: var(--dark);
-            line-height: 1.6;
-        }
-
-        /* Navigation */
-        .navbar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            z-index: 1000;
-            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.05);
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2rem;
-            list-style: none;
-        }
-
-        .nav-links a {
-            text-decoration: none;
-            color: var(--dark);
-            font-weight: 500;
-            transition: color 0.3s;
-            position: relative;
-        }
-
-        .nav-links a:hover {
-            color: var(--primary);
-        }
-
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            bottom: -5px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient);
-            transition: width 0.3s;
-        }
-
-        .nav-links a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Section */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            padding: 8rem 2rem 4rem;
-            background: linear-gradient(135deg, #f8fafc 0%, #e0e7ff 100%);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(99, 102, 241, 0.1) 0%, transparent 70%);
-            border-radius: 50%;
-        }
-
-        .hero-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .hero-content h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 1rem;
-        }
-
-        .hero-content h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .hero-content .subtitle {
-            font-size: 1.25rem;
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .hero-content p {
-            color: var(--gray);
-            margin-bottom: 2rem;
-            font-size: 1.1rem;
-        }
-
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 0.875rem 2rem;
-            border-radius: 50px;
-            font-weight: 600;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient);
-            color: white;
-            box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4);
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.5);
-        }
-
-        .btn-outline {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .btn-outline:hover {
-            background: var(--primary);
-            color: white;
-        }
-
-        .hero-image {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-
-        .hero-image img {
-            width: 350px;
-            height: 350px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid white;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-image::before {
-            content: '';
-            position: absolute;
-            top: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 350px;
-            height: 350px;
-            background: var(--gradient);
-            border-radius: 50%;
-            z-index: 1;
-            opacity: 0.3;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            margin-top: 2rem;
-        }
-
-        .social-links a {
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            background: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--dark);
-            font-size: 1.2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-        }
-
-        .social-links a:hover {
-            background: var(--gradient);
-            color: white;
-            transform: translateY(-3px);
-        }
-
-        /* Section Styles */
-        section {
-            padding: 5rem 2rem;
-        }
-
-        .section-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
-        .section-title h2 {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-        }
-
-        .section-title h2 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            font-size: 1.1rem;
-        }
-
-        /* About Section */
-        #about {
-            background: white;
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-content h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            color: var(--primary);
-        }
-
-        .about-content p {
-            color: var(--gray);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-stats {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-
-        .stat-item {
-            text-align: center;
-            padding: 1.5rem;
-            background: var(--light);
-            border-radius: 15px;
-        }
-
-        .stat-item h4 {
-            font-size: 2rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .stat-item p {
-            color: var(--gray);
-            font-size: 0.9rem;
-            margin-top: 0.5rem;
-        }
-
-        .education-card {
-            background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
-            padding: 2rem;
-            border-radius: 20px;
-            color: white;
-        }
-
-        .education-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            opacity: 0.9;
-        }
-
-        .education-card h4 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .education-card p {
-            opacity: 0.9;
-            font-size: 0.95rem;
-        }
-
-        .education-card .gpa {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
-            padding: 0.5rem 1rem;
-            border-radius: 50px;
-            margin-top: 1rem;
-            font-weight: 600;
-        }
-
-        /* Skills Section */
-        #skills {
-            background: var(--light);
-        }
-
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s;
-        }
-
-        .skill-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-        }
-
-        .skill-card .icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 15px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-        }
-
-        .skill-card:nth-child(1) .icon { background: linear-gradient(135deg, #6366f1, #8b5cf6); }
-        .skill-card:nth-child(2) .icon { background: linear-gradient(135deg, #0ea5e9, #06b6d4); }
-        .skill-card:nth-child(3) .icon { background: linear-gradient(135deg, #f59e0b, #f97316); }
-        .skill-card:nth-child(4) .icon { background: linear-gradient(135deg, #10b981, #14b8a6); }
-
-        .skill-card h3 {
-            font-size: 1.25rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-        }
-
-        .skill-tags span {
-            background: var(--light);
-            padding: 0.4rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: var(--gray);
-        }
-
-        /* Projects Section */
-        #projects {
-            background: white;
-        }
-
-        .projects-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 2rem;
-        }
-
-        .project-card {
-            background: var(--light);
-            border-radius: 20px;
-            overflow: hidden;
-            transition: all 0.3s;
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
-        }
-
-        .project-image {
-            height: 200px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .project-image::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.2) 100%);
-        }
-
-        .project-card:nth-child(2) .project-image {
-            background: linear-gradient(135deg, #0ea5e9, #06b6d4);
-        }
-
-        .project-card:nth-child(3) .project-image {
-            background: linear-gradient(135deg, #10b981, #14b8a6);
-        }
-
-        .project-content {
-            padding: 1.5rem;
-        }
-
-        .project-content h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .project-content .role {
-            color: var(--primary);
-            font-weight: 600;
-            font-size: 0.9rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-content p {
-            color: var(--gray);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .project-tech span {
-            background: white;
-            padding: 0.3rem 0.7rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            color: var(--primary);
-            border: 1px solid rgba(99, 102, 241, 0.2);
-        }
-
-        .project-features {
-            list-style: none;
-            font-size: 0.9rem;
-            color: var(--gray);
-        }
-
-        .project-features li {
-            padding: 0.3rem 0;
-            padding-left: 1.5rem;
-            position: relative;
-        }
-
-        .project-features li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--primary);
-            font-weight: 700;
-        }
-
-        /* Certificates Section */
-        #certificates {
-            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
-            color: white;
-        }
-
-        #certificates .section-title h2 span {
-            background: linear-gradient(135deg, #f59e0b 0%, #f97316 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        #certificates .section-title p {
-            color: rgba(255, 255, 255, 0.7);
-        }
-
-        .certificates-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .cert-card {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 2rem;
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            transition: all 0.3s;
-        }
-
-        .cert-card:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-5px);
-        }
-
-        .cert-card i {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            color: #f59e0b;
-        }
-
-        .cert-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-card p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.9rem;
-        }
-
-        .cert-card .year {
-            display: inline-block;
-            background: rgba(245, 158, 11, 0.2);
-            color: #f59e0b;
-            padding: 0.3rem 0.8rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            margin-top: 1rem;
-        }
-
-        /* Contact Section */
-        #contact {
-            background: var(--light);
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-        }
-
-        .contact-info h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .contact-item .icon {
-            width: 50px;
-            height: 50px;
-            border-radius: 15px;
-            background: var(--gradient);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-        }
-
-        .contact-item h4 {
-            font-size: 0.9rem;
-            color: var(--gray);
-            font-weight: 500;
-        }
-
-        .contact-item p, .contact-item a {
-            color: var(--dark);
-            text-decoration: none;
-            font-weight: 600;
-        }
-
-        .contact-form {
-            background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
-        }
-
-        .form-group {
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-            color: var(--dark);
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 1rem;
-            border: 2px solid #e2e8f0;
-            border-radius: 10px;
-            font-family: inherit;
-            font-size: 1rem;
-            transition: border-color 0.3s;
-        }
-
-        .form-group input:focus,
-        .form-group textarea:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .form-group textarea {
-            min-height: 120px;
-            resize: vertical;
-        }
-
-        /* Footer */
-        footer {
-            background: var(--darker);
-            color: white;
-            padding: 2rem;
-            text-align: center;
-        }
-
-        footer p {
-            opacity: 0.7;
-        }
-
-        footer .social-links {
-            justify-content: center;
-            margin-bottom: 1rem;
-        }
-
-        footer .social-links a {
-            background: rgba(255, 255, 255, 0.1);
-            color: white;
-        }
-
-        footer .social-links a:hover {
-            background: var(--gradient);
-        }
-
-        /* Responsive */
-        @media (max-width: 968px) {
-            .hero-container,
-            .about-grid,
-            .contact-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content h1 {
-                font-size: 2.5rem;
-            }
-
-            .hero-image {
-                order: -1;
-            }
-
-            .hero-buttons,
-            .social-links {
-                justify-content: center;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .about-stats {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        @media (max-width: 600px) {
-            .hero-content h1 {
-                font-size: 2rem;
-            }
-
-            .hero-image img {
-                width: 250px;
-                height: 250px;
-            }
-
-            .hero-image::before {
-                width: 250px;
-                height: 250px;
-            }
-
-            .about-stats {
-                grid-template-columns: 1fr;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            section {
-                padding: 3rem 1rem;
-            }
-        }
-
-        /* Animations */
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-20px); }
-        }
-
-        .hero-image img {
-            animation: float 6s ease-in-out infinite;
-        }
-    </style>
+    <!-- AOS CSS removed to prevent conflict with GSAP -->
+    <link rel="stylesheet" href="styles.css">
+  
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="logo">TT.</div>
-            <ul class="nav-links">
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Loader -->
+    <div class="loader">
+        <div class="loader-content">
+            <div class="loader-spinner"></div>
+        </div>
+    </div>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursorFollower"></div>
+
+    <!-- Particles Background -->
+    <!-- Thay thế particles-js bằng Mesh Gradient trong CSS, bỏ div này hoặc giữ lại nếu thích -->
+    <div id="particles-js" style="opacity: 0.3;"></div>
+    <div class="animated-bg" aria-hidden="true"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">TT<span>.</span></a>
+            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon" id="themeIcon"></i>
+            </button>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#home">Trang chủ</a></li>
                 <li><a href="#about">Giới thiệu</a></li>
                 <li><a href="#skills">Kỹ năng</a></li>
@@ -803,129 +56,211 @@
     </nav>
 
     <!-- Hero Section -->
-    <section class="hero" id="home">
-        <div class="hero-container">
+    <section id="home" class="hero">
+        <div class="hero-grid">
             <div class="hero-content">
-                <h1>Xin chào, tôi là<br><span>Nguyễn Thanh Tiền</span></h1>
-                <p class="subtitle">Software Engineering Intern</p>
-                <p>Sinh viên năm cuối ngành Kỹ sư phần mềm, đam mê phát triển ứng dụng web và mobile. Sẵn sàng học hỏi và đóng góp vào các dự án thực tế.</p>
+                <div class="hero-badge">
+                    <i class="fas fa-circle" style="font-size: 8px;"></i>
+                    <span>Available for hire</span>
+                </div>
+                <h1 class="hero-title">
+                    Xin chào, tôi là<br>
+                    <span class="gradient-text reveal-text">Nguyễn Thanh Tiền</span>
+                </h1>
+                <div class="typed-container">
+                    <span class="typed-text" id="typed"></span>
+                </div>
+                <p class="hero-subtitle reveal-text">
+                    Sinh viên năm cuối ngành Kỹ sư phần mềm, đam mê phát triển ứng dụng web và mobile. Sẵn sàng học hỏi và đóng góp vào các dự án thực tế.
+                </p>
                 <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary">
-                        <i class="fas fa-rocket"></i> Xem Dự Án
+                    <a href="#projects" class="btn btn-primary magnetic-btn">
+                        <span class="btn-text"><i class="fas fa-rocket"></i> Xem Dự Án</span>
                     </a>
-                    <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-paper-plane"></i> Liên Hệ
+                    <a href="#contact" class="btn btn-outline magnetic-btn">
+                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Liên Hệ</span>
                     </a>
                 </div>
                 <div class="social-links">
-                    <a href="https://github.com/nguyenthanhtie" target="_blank"><i class="fab fa-github"></i></a>
-                    <a href="mailto:nguyenthantien2120@gmail.com"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:0334681752"><i class="fas fa-phone"></i></a>
+                    <a href="https://github.com/nguyenthanhtie" target="_blank" class="social-link magnetic-btn"><i class="fab fa-github"></i></a>
+                    <a href="mailto:nguyenthantien2120@gmail.com" class="social-link magnetic-btn"><i class="fas fa-envelope"></i></a>
+                    <a href="tel:0334681752" class="social-link magnetic-btn"><i class="fas fa-phone"></i></a>
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="https://via.placeholder.com/350x350.png?text=Your+Photo" alt="Nguyễn Thanh Tiền">
+            <div class="hero-visual">
+                <div class="hero-image-wrapper" data-tilt data-tilt-full-page-listening>
+                    <div class="hero-image-glow"></div>
+                    <img src="unnamed.jpg" alt="Nguyễn Thanh Tiền" class="hero-image" loading="lazy" decoding="async">
+                    <div class="floating-shapes">
+                        <div class="shape shape-1"></div>
+                        <div class="shape shape-2"></div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- About Section -->
     <section id="about">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Về <span>Tôi</span></h2>
-                <p>Tìm hiểu thêm về hành trình và mục tiêu của tôi</p>
-            </div>
-            <div class="about-grid">
-                <div class="about-content">
-                    <h3>Mục tiêu nghề nghiệp</h3>
-                    <p>Tôi mong muốn được thực tập trong lĩnh vực Công nghệ Thông tin để áp dụng kiến thức về lập trình, cơ sở dữ liệu và phát triển phần mềm vào thực tế.</p>
-                    <p>Thông qua quá trình thực tập, tôi kỳ vọng học hỏi kinh nghiệm từ môi trường chuyên nghiệp, rèn luyện kỹ năng làm việc nhóm và tư duy giải quyết vấn đề. Trong tương lai, tôi định hướng phát triển thành lập trình viên phần mềm chuyên nghiệp.</p>
-                    <div class="about-stats">
-                        <div class="stat-item">
-                            <h4>3+</h4>
-                            <p>Dự án hoàn thành</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>3.31</h4>
-                            <p>GPA / 4.0</p>
-                        </div>
-                        <div class="stat-item">
-                            <h4>2</h4>
-                            <p>Chứng chỉ</p>
-                        </div>
+        <div class="section-header">
+            <span class="section-tag">Về tôi</span>
+            <h2 class="section-title" data-value="Giới Thiệu">Giới <span>Thiệu</span></h2>
+        </div>
+        <div class="about-grid">
+            <div class="about-card">
+                <h3>🎯 Mục tiêu nghề nghiệp</h3>
+                <p>
+                    Tôi mong muốn được thực tập trong lĩnh vực Công nghệ Thông tin để áp dụng kiến thức về lập trình, cơ sở dữ liệu và phát triển phần mềm vào thực tế.
+                </p>
+                <p>
+                    Thông qua quá trình thực tập, tôi kỳ vọng học hỏi kinh nghiệm từ môi trường chuyên nghiệp, rèn luyện kỹ năng làm việc nhóm và tư duy giải quyết vấn đề.
+                </p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="3">0</div>
+                        <div class="stat-label">Dự án</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">3.31</div>
+                        <div class="stat-label">GPA</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="2">0</div>
+                        <div class="stat-label">Chứng chỉ</div>
                     </div>
                 </div>
-                <div class="education-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>Trường Đại học Nguyễn Tất Thành</h4>
-                    <p>Khoa Công nghệ Thông tin</p>
-                    <p>Ngành Kỹ sư phần mềm</p>
-                    <p>2022 - 2026</p>
-                    <span class="gpa"><i class="fas fa-star"></i> GPA: 3.31/4.0</span>
+            </div>
+            <div class="education-card">
+                <i class="fas fa-graduation-cap"></i>
+                <h3>Đại học Nguyễn Tất Thành</h3>
+                <p>Khoa Công nghệ Thông tin</p>
+                <p>Ngành Kỹ sư phần mềm</p>
+                <p>2022 - 2026</p>
+                <div class="gpa-badge">
+                    <i class="fas fa-star"></i> GPA: 3.31/4.0
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Kỹ <span>Năng</span></h2>
-                <p>Các công nghệ và kỹ năng tôi đã học và sử dụng</p>
+    <section id="skills" class="skills">
+        <div class="section-header">
+            <span class="section-tag">💡 Chuyên môn</span>
+            <h2 class="section-title">Kỹ Năng <span>Cốt Lõi</span></h2>
+            <p class="section-desc">Công nghệ và kỹ năng tôi đã nắm vững qua quá trình học tập và thực hành</p>
+        </div>
+        <div class="skills-container">
+            <div class="skills-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-laptop-code"></i>
+                    </div>
+                    <h3>Frontend Development</h3>
+                </div>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">HTML5 & CSS3</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">ReactJS</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">React Native</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="skills-grid">
-                <div class="skill-card">
-                    <div class="icon"><i class="fas fa-code"></i></div>
-                    <h3>Frontend</h3>
-                    <div class="skill-tags">
-                        <span>HTML5</span>
-                        <span>CSS3</span>
-                        <span>ReactJS</span>
-                        <span>React Native</span>
+
+            <div class="skills-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>Backend Development</h3>
+                </div>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Node.js</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Java</span>
+                            <span class="skill-percent">75%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">PHP</span>
+                            <span class="skill-percent">70%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 70%"></div>
+                        </div>
                     </div>
                 </div>
-                <div class="skill-card">
-                    <div class="icon"><i class="fas fa-server"></i></div>
-                    <h3>Backend</h3>
-                    <div class="skill-tags">
-                        <span>Node.js</span>
-                        <span>Java</span>
-                        <span>PHP</span>
+            </div>
+
+            <div class="skills-category">
+                <div class="category-header">
+                    <div class="category-icon">
+                        <i class="fas fa-database"></i>
                     </div>
+                    <h3>Database & Tools</h3>
                 </div>
-                <div class="skill-card">
-                    <div class="icon"><i class="fas fa-database"></i></div>
-                    <h3>Data</h3>
-                    <div class="skill-tags">
-                        <span>MySQL</span>
-                        <span>SQL Server</span>
-                        <span>MongoDB</span>
-                        <span>Firebase</span>
+                <div class="skill-list">
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">MySQL & MongoDB</span>
+                            <span class="skill-percent">85%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <div class="icon"><i class="fas fa-tools"></i></div>
-                    <h3>Tool</h3>
-                    <div class="skill-tags">
-                        <span>Git</span>
-                        <span>Postman</span>
-                        <span>VS Code</span>
-                        <span>IntelliJ/NetBeans</span>
-                        <span>XAMPP</span>
-                        <span>Figma</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Git & GitHub</span>
+                            <span class="skill-percent">90%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
                     </div>
-                </div>
-                <div class="skill-card">
-                    <div class="icon"><i class="fas fa-users"></i></div>
-                    <h3>Kỹ năng mềm</h3>
-                    <div class="skill-tags">
-                        <span>Làm việc nhóm hiệu quả</span>
-                        <span>Tự học và chủ động</span>
-                        <span>Giải quyết vấn đề</span>
-                        <span>Tư duy thiết kế</span>
-                        <span>Word, Excel, PowerPoint</span>
+                    <div class="skill-item">
+                        <div class="skill-info">
+                            <span class="skill-name">Figma & VS Code</span>
+                            <span class="skill-percent">80%</span>
+                        </div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 80%"></div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -934,71 +269,113 @@
 
     <!-- Projects Section -->
     <section id="projects">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Dự Án <span>Nổi Bật</span></h2>
-                <p>Một số dự án tôi đã thực hiện</p>
-            </div>
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-image">
+        <div class="section-header">
+            <span class="section-tag">🚀 Portfolio</span>
+            <h2 class="section-title">Dự Án <span>Nổi Bật</span></h2>
+            <p class="section-desc">Những dự án tôi đã phát triển và đóng góp</p>
+        </div>
+        
+        <div class="projects-wrapper">
+            <!-- Featured Project -->
+            <div class="featured-project">
+                <div class="project-preview">
+                    <div class="preview-badge">
+                        <i class="fas fa-star"></i>
+                        <span>Featured</span>
+                    </div>
+                    <div class="preview-icon">
                         <i class="fas fa-comments"></i>
                     </div>
-                    <div class="project-content">
-                        <h3>Ứng dụng Chat Real-time</h3>
-                        <p class="role">Front-end Developer</p>
-                        <div class="project-tech">
-                            <span>React Native</span>
-                            <span>Firebase</span>
-                            <span>Expo</span>
-                        </div>
-                        <ul class="project-features">
-                            <li>Giao diện giống Messenger, UX tối ưu</li>
-                            <li>Gửi/nhận tin nhắn, upload hình ảnh</li>
-                            <li>Push notification real-time</li>
-                            <li>Đăng nhập với Google Authentication</li>
-                        </ul>
+                </div>
+                <div class="project-details">
+                    <div class="project-meta">
+                        <span class="project-status">
+                            <i class="fas fa-circle"></i> Completed
+                        </span>
+                        <span class="project-date">
+                            <i class="far fa-calendar"></i> 2024
+                        </span>
+                    </div>
+                    <h3>App Chat Real-time</h3>
+                    <span class="project-role">
+                        <i class="fas fa-user-tag"></i> Front-end Developer
+                    </span>
+                    <p class="project-desc">
+                        Ứng dụng nhắn tin thời gian thực với giao diện hiện đại, hỗ trợ gửi ảnh, video và thông báo đẩy. Tích hợp Firebase cho xác thực và lưu trữ dữ liệu real-time.
+                    </p>
+                    <div class="project-tech">
+                        <span class="tech-tag">
+                            <i class="fab fa-react"></i> React Native
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fas fa-fire"></i> Firebase
+                        </span>
+                        <span class="tech-tag">
+                            <i class="fas fa-mobile-alt"></i> Expo
+                        </span>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/nguyenthanhtie/Chillchat" class="project-link" target="_blank">
+                            <i class="fab fa-github"></i> View Code
+                        </a>
+                        
                     </div>
                 </div>
+            </div>
+
+            <!-- Other Projects Grid -->
+            <div class="projects-grid">
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-book"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Website Quản Lý Bán Sách</h3>
-                        <p class="role">Full-stack Developer</p>
-                        <div class="project-tech">
-                            <span>HTML/CSS</span>
-                            <span>JavaScript</span>
-                            <span>PHP</span>
-                            <span>MySQL</span>
+                    <div class="project-thumbnail">
+                        <div class="thumbnail-icon">
+                            <i class="fas fa-book"></i>
                         </div>
-                        <ul class="project-features">
-                            <li>Quản lý sản phẩm, đơn hàng, người dùng</li>
-                            <li>Hệ thống Admin CRUD đầy đủ</li>
-                            <li>Giao diện responsive Bootstrap</li>
-                            <li>Quản lý giao dịch và báo cáo</li>
-                        </ul>
+                        <div class="project-overlay">
+                            <a href="#" class="overlay-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h4>Web Quản Lý Bán Sách</h4>
+                            <span class="project-tag">Full-stack</span>
+                        </div>
+                        <p class="project-summary">
+                            Hệ thống thương mại điện tử bán sách với quản lý đơn hàng và admin panel.
+                        </p>
+                        <div class="project-stack">
+                            <span class="stack-item">PHP</span>
+                            <span class="stack-item">MySQL</span>
+                            <span class="stack-item">JavaScript</span>
+                        </div>
                     </div>
                 </div>
+
                 <div class="project-card">
-                    <div class="project-image">
-                        <i class="fas fa-graduation-cap"></i>
-                    </div>
-                    <div class="project-content">
-                        <h3>Website Hỗ Trợ Học Tập</h3>
-                        <p class="role">Full-stack Developer</p>
-                        <div class="project-tech">
-                            <span>ReactJS</span>
-                            <span>TailwindCSS</span>
-                            <span>MongoDB</span>
+                    <div class="project-thumbnail">
+                        <div class="thumbnail-icon">
+                            <i class="fas fa-graduation-cap"></i>
                         </div>
-                        <ul class="project-features">
-                            <li>Quản lý khóa học và nội dung</li>
-                            <li>Hệ thống Badge & Leaderboard</li>
-                            <li>Gamification tăng động lực học</li>
-                            <li>Theo dõi tiến độ học tập</li>
-                        </ul>
+                        <div class="project-overlay">
+                            <a href="#" class="overlay-link">
+                                <i class="fas fa-arrow-right"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="project-info">
+                        <div class="project-header">
+                            <h4>Web Hỗ Trợ Học Tập</h4>
+                            <span class="project-tag">Full-stack</span>
+                        </div>
+                        <p class="project-summary">
+                            Nền tảng học tập trực tuyến với gamification, badge và bảng xếp hạng.
+                        </p>
+                        <div class="project-stack">
+                            <span class="stack-item">ReactJS</span>
+                            <span class="stack-item">Node.js</span>
+                            <span class="stack-item">MongoDB</span>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1006,26 +383,24 @@
     </section>
 
     <!-- Certificates Section -->
-    <section id="certificates">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Chứng <span>Chỉ</span></h2>
-                <p>Các chứng chỉ tôi đã đạt được</p>
-            </div>
-            <div class="certificates-grid">
-                <div class="cert-card">
-                    <i class="fab fa-google"></i>
-                    <h3>Google Data Analytics Professional Certificate</h3>
-                    <p>Google (Coursera)</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Data Cleaning, Data Analysis, SQL, R, Tableau, Excel</p>
-                    <span class="year">2025</span>
+    <section class="certificates">
+        <div class="section-header">
+            <span class="section-tag">Thành tựu</span>
+            <h2 class="section-title">Chứng <span>Chỉ</span></h2>
+        </div>
+        <div class="cert-grid">
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-google"></i></div>
+                <div class="cert-info">
+                    <h3>Google Data Analytics</h3>
+                    <p>Coursera - 2025</p>
                 </div>
-                <div class="cert-card">
-                    <i class="fab fa-microsoft"></i>
-                    <h3>Microsoft Office Specialist (MOS)</h3>
-                    <p>Microsoft</p>
-                    <p style="font-size: 0.85rem; margin-top: 0.5rem;">Excel, Word, PowerPoint</p>
-                    <span class="year">2025</span>
+            </div>
+            <div class="cert-card">
+                <div class="cert-icon"><i class="fab fa-microsoft"></i></div>
+                <div class="cert-info">
+                    <h3>Microsoft Office Specialist</h3>
+                    <p>Microsoft - 2025</p>
                 </div>
             </div>
         </div>
@@ -1033,67 +408,77 @@
 
     <!-- Contact Section -->
     <section id="contact">
-        <div class="section-container">
-            <div class="section-title">
-                <h2>Liên <span>Hệ</span></h2>
-                <p>Hãy kết nối với tôi</p>
-            </div>
-            <div class="contact-grid">
-                <div class="contact-info">
-                    <h3>Thông tin liên hệ</h3>
-                    <div class="contact-item">
-                        <div class="icon"><i class="fas fa-phone"></i></div>
-                        <div>
-                            <h4>Điện thoại</h4>
-                            <a href="tel:0334681752">0334 681 752</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon"><i class="fas fa-envelope"></i></div>
-                        <div>
-                            <h4>Email</h4>
-                            <a href="mailto:nguyenthantien2120@gmail.com">nguyenthantien2120@gmail.com</a>
-                        </div>
-                    </div>
-                    <div class="contact-item">
-                        <div class="icon"><i class="fab fa-github"></i></div>
-                        <div>
-                            <h4>GitHub</h4>
-                            <a href="https://github.com/nguyenthanhtie" target="_blank">github.com/nguyenthanhtie</a>
-                        </div>
+        <div class="section-header" data-aos="fade-up">
+            <span class="section-tag">Liên hệ</span>
+            <h2 class="section-title">Kết Nối <span>Với Tôi</span></h2>
+        </div>
+        <div class="contact-container">
+            <div class="contact-info">
+                <h3>Hãy liên hệ!</h3>
+                <p>Tôi luôn sẵn sàng trao đổi về công việc và các cơ hội hợp tác.</p>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
+                    <div>
+                        <span>Điện thoại</span>
+                        <a href="tel:0334681752">0334 681 752</a>
                     </div>
                 </div>
-                <div class="contact-form">
-                    <form>
-                        <div class="form-group">
-                            <label for="name">Họ và tên</label>
-                            <input type="text" id="name" placeholder="Nhập họ và tên của bạn">
-                        </div>
-                        <div class="form-group">
-                            <label for="email">Email</label>
-                            <input type="email" id="email" placeholder="Nhập email của bạn">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Tin nhắn</label>
-                            <textarea id="message" placeholder="Nhập tin nhắn của bạn"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-primary" style="width: 100%;">
-                            <i class="fas fa-paper-plane"></i> Gửi tin nhắn
-                        </button>
-                    </form>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+                    <div>
+                        <span>Email</span>
+                        <a href="mailto:nguyenthantien2120@gmail.com">nguyenthantien2120@gmail.com</a>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon"><i class="fab fa-github"></i></div>
+                    <div>
+                        <span>GitHub</span>
+                        <a href="https://github.com/nguyenthanhtie" target="_blank">nguyenthanhtie</a>
+                    </div>
                 </div>
             </div>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Họ và tên">
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Email của bạn">
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Nội dung tin nhắn"></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary" style="width: 100%;">
+                    <i class="fas fa-paper-plane"></i> Gửi Tin Nhắn
+                </button>
+            </form>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <div class="social-links">
-            <a href="https://github.com/nguyenthanhtie" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="mailto:nguyenthantien2120@gmail.com"><i class="fas fa-envelope"></i></a>
-            <a href="tel:0334681752"><i class="fas fa-phone"></i></a>
+        <div class="footer-social">
+            <a href="https://github.com/nguyenthanhtie" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
+            <a href="mailto:nguyenthantien2120@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
+            <a href="tel:0334681752" class="social-link"><i class="fas fa-phone"></i></a>
         </div>
-        <p>© 2024 Nguyễn Thanh Tiền. All rights reserved.</p>
+        <p>© 2024 Nguyễn Thanh Tiền. Made with ❤️</p>
     </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- Scripts -->
+    <!-- AOS Script removed -->
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" defer></script>
+    <!-- Thêm ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
+    
+    <script src="index.js" defer></script>
 </body>
 </html>
