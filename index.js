@@ -370,3 +370,101 @@ themeToggleBtn.addEventListener('click', () => {
     }
     refreshThemeIcon();
 });
+
+// ===== COSMIC MOUSE FOLLOW EFFECT =====
+const orb1 = document.querySelector('.orb-1');
+const orb2 = document.querySelector('.orb-2');
+const orb3 = document.querySelector('.orb-3');
+const cosmicTrail = document.querySelector('.cosmic-trail');
+const mouseFollowContainer = document.querySelector('.mouse-follow-container');
+
+let mouseX = window.innerWidth / 2;
+let mouseY = window.innerHeight / 2;
+let orb1X = mouseX, orb1Y = mouseY;
+let orb2X = mouseX, orb2Y = mouseY;
+let orb3X = mouseX, orb3Y = mouseY;
+let trailX = mouseX, trailY = mouseY;
+
+// Track mouse position
+document.addEventListener('mousemove', (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+    
+    // Create floating particles occasionally
+    if (Math.random() < 0.1) {
+        createCosmicParticle(mouseX, mouseY);
+    }
+}, { passive: true });
+
+// Smooth follow animation
+function animateCosmicOrbs() {
+    // Different follow speeds for parallax effect
+    const speed1 = 0.02; // Slowest - largest orb
+    const speed2 = 0.04; // Medium
+    const speed3 = 0.06; // Faster
+    const speedTrail = 0.15; // Fastest - small trail
+    
+    // Lerp (linear interpolation) for smooth movement
+    orb1X += (mouseX - orb1X) * speed1;
+    orb1Y += (mouseY - orb1Y) * speed1;
+    
+    orb2X += (mouseX - orb2X) * speed2;
+    orb2Y += (mouseY - orb2Y) * speed2;
+    
+    orb3X += (mouseX - orb3X) * speed3;
+    orb3Y += (mouseY - orb3Y) * speed3;
+    
+    trailX += (mouseX - trailX) * speedTrail;
+    trailY += (mouseY - trailY) * speedTrail;
+    
+    // Apply positions
+    if (orb1) orb1.style.transform = `translate(${orb1X - 150}px, ${orb1Y - 150}px)`;
+    if (orb2) orb2.style.transform = `translate(${orb2X - 100}px, ${orb2Y - 100}px)`;
+    if (orb3) orb3.style.transform = `translate(${orb3X - 75}px, ${orb3Y - 75}px)`;
+    if (cosmicTrail) cosmicTrail.style.transform = `translate(${trailX - 4}px, ${trailY - 4}px)`;
+    
+    requestAnimationFrame(animateCosmicOrbs);
+}
+
+// Create floating particle
+function createCosmicParticle(x, y) {
+    if (!mouseFollowContainer) return;
+    
+    const particle = document.createElement('div');
+    particle.className = 'cosmic-particle';
+    
+    // Random offset
+    const offsetX = (Math.random() - 0.5) * 40;
+    const offsetY = (Math.random() - 0.5) * 40;
+    
+    particle.style.left = (x + offsetX) + 'px';
+    particle.style.top = (y + offsetY) + 'px';
+    
+    // Random color
+    const colors = [
+        'rgba(99, 102, 241, 0.8)',
+        'rgba(168, 85, 247, 0.8)',
+        'rgba(6, 182, 212, 0.8)',
+        'rgba(244, 114, 182, 0.8)',
+        'rgba(255, 255, 255, 0.9)'
+    ];
+    particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+    particle.style.boxShadow = `0 0 6px ${particle.style.background}`;
+    
+    mouseFollowContainer.appendChild(particle);
+    
+    // Remove after animation
+    setTimeout(() => {
+        particle.remove();
+    }, 1000);
+}
+
+// Start animation
+if (orb1 && orb2 && orb3) {
+    animateCosmicOrbs();
+}
+
+// Hide cosmic mouse effects on touch devices
+if ('ontouchstart' in window && mouseFollowContainer) {
+    mouseFollowContainer.style.display = 'none';
+}
