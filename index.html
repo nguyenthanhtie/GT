@@ -1,512 +1,319 @@
 <!DOCTYPE html>
-<html lang="vi">
+<html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nguyễn Thanh Tiền | Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <!-- AOS CSS removed to prevent conflict with GSAP -->
+    <title>Nguyễn Thanh Tiền | IT Developer</title>
+    <meta name="description"
+        content="Portfolio of Nguyễn Thanh Tiền, an Information Technology student specializing in backend development and scalable web solutions.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-  
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
+
 <body>
-    <!-- Noise Overlay -->
-    <div class="noise-overlay"></div>
+    <div class="cursor-glow"></div>
 
-    <!-- Loader -->
-    <div class="loader">
-        <div class="loader-content">
-            <div class="loader-spinner"></div>
+    <header class="header">
+        <div class="logo">NTT<span>.</span></div>
+        <nav class="main-nav">
+            <a href="#about">About</a>
+            <a href="#projects">Portfolio</a>
+            <a href="#contact">Contact</a>
+        </nav>
+        <div class="search-bar">
+            <input type="text" placeholder="Search">
+            <i data-lucide="search"></i>
         </div>
-    </div>
+    </header>
 
-    <!-- Scroll Progress -->
-    <div class="scroll-progress" id="scrollProgress"></div>
-
-    <!-- Custom Cursor -->
-    <div class="cursor" id="cursor"></div>
-    <div class="cursor-follower" id="cursorFollower"></div>
-
-    <!-- Particles Background -->
-    <!-- Thay thế particles-js bằng Mesh Gradient trong CSS, bỏ div này hoặc giữ lại nếu thích -->
-    <div id="particles-js" style="opacity: 0.3;"></div>
-    <div class="animated-bg" aria-hidden="true"></div>
-
-    <!-- Cosmic Universe Effect -->
-    <div class="cosmic-universe">
-        <div class="stars-layer stars-small"></div>
-        <div class="stars-layer stars-medium"></div>
-        <div class="stars-layer stars-large"></div>
-        
-        <div class="mouse-follow-container">
-            <div class="cosmic-orb orb-1"></div>
-            <div class="cosmic-orb orb-2"></div>
-            <div class="cosmic-orb orb-3"></div>
-            <div class="cosmic-trail"></div>
-        </div>
-        <div class="cosmic-dust"></div>
-        <div class="nebula nebula-1"></div>
-        <div class="nebula nebula-2"></div>
-    </div>
-
-    <!-- Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="nav-content">
-            <a href="#" class="logo">TT<span>.</span></a>
-            <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
-                <i class="fas fa-moon" id="themeIcon"></i>
-            </button>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-links" id="navLinks">
-                <li><a href="#home">Trang chủ</a></li>
-                <li><a href="#about">Giới thiệu</a></li>
-                <li><a href="#skills">Kỹ năng</a></li>
-                <li><a href="#projects">Dự án</a></li>
-                <li><a href="#contact">Liên hệ</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-grid">
-            <div class="hero-content">
-            
-                <h1 class="hero-title">
-                    Xin chào, tôi là<br>
-                    <span class="gradient-text reveal-text">Nguyễn Thanh Tiền</span>
-                </h1>
-                <div class="typed-container">
-                    <span class="typed-text" id="typed"></span>
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="hero">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <p class="hero-intro">I'M <span>Nguyễn Thanh Tiền</span></p>
+                    <h1 class="hero-role">IT Student & <br>Backend Developer</h1>
+                    <a href="#contact" class="btn btn-primary">Contact Me</a>
                 </div>
-                <p class="hero-subtitle reveal-text">
-                    Sinh viên năm cuối ngành Kỹ sư phần mềm, đam mê phát triển ứng dụng web và mobile. Sẵn sàng học hỏi và đóng góp vào các dự án thực tế.
-                </p>
-                <div class="hero-buttons">
-                    <a href="#projects" class="btn btn-primary magnetic-btn">
-                        <span class="btn-text"><i class="fas fa-rocket"></i> Xem Dự Án</span>
-                    </a>
-                    <a href="#contact" class="btn btn-outline magnetic-btn">
-                        <span class="btn-text"><i class="fas fa-paper-plane"></i> Liên Hệ</span>
-                    </a>
-                </div>
-                <div class="social-links">
-                    <a href="https://github.com/nguyenthanhtie" target="_blank" class="social-link magnetic-btn"><i class="fab fa-github"></i></a>
-                    <a href="mailto:nguyenthantien2120@gmail.com" class="social-link magnetic-btn"><i class="fas fa-envelope"></i></a>
-                    <a href="tel:0334681752" class="social-link magnetic-btn"><i class="fas fa-phone"></i></a>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="hero-image-wrapper" data-tilt data-tilt-full-page-listening>
-                    <div class="hero-image-glow"></div>
-                    <img src="unnamed.jpg" alt="Nguyễn Thanh Tiền" class="hero-image" loading="lazy" decoding="async">
-                    <div class="floating-shapes">
-                        <div class="shape shape-1"></div>
-                        <div class="shape shape-2"></div>
+                <div class="hero-visual">
+                    <div class="hero-image-wrapper">
+                        <img src="unnamed.jpg" alt="Nguyễn Thanh Tiền" class="hero-image">
+                    </div>
+                    <div class="social-sidebar">
+                        <a href="#"><i data-lucide="facebook"></i></a>
+                        <a href="#"><i data-lucide="twitter"></i></a>
+                        <a href="#"><i data-lucide="linkedin"></i></a>
+                        <a href="#"><i data-lucide="phone"></i></a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About Section -->
-    <section id="about">
-        <div class="section-header">
-            <h2 class="section-title" data-value="Giới Thiệu">Giới <span>Thiệu</span></h2>
-        </div>
-        <div class="about-grid">
-            <div class="about-card">
-                <h3>🎯 Mục tiêu nghề nghiệp</h3>
-                <p>
-                    Tôi mong muốn được thực tập trong lĩnh vực Công nghệ Thông tin để áp dụng kiến thức về lập trình, cơ sở dữ liệu và phát triển phần mềm vào thực tế.
-                </p>
-                <p>
-                    Thông qua quá trình thực tập, tôi kỳ vọng học hỏi kinh nghiệm từ môi trường chuyên nghiệp, rèn luyện kỹ năng làm việc nhóm và tư duy giải quyết vấn đề.
-                </p>
-                <div class="stats-grid">
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="3">0</div>
-                        <div class="stat-label">Dự án</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">3.31</div>
-                        <div class="stat-label">GPA</div>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number" data-count="4">0</div>
-                        <div class="stat-label">Chứng chỉ</div>
-                    </div>
+        <!-- About Section -->
+        <section id="about" class="about">
+            <div class="section-title">
+                <h2>About</h2>
+                <div class="title-line"></div>
+            </div>
+            <p class="about-description">
+                Tôi là sinh viên ngành Công nghệ Thông tin, đam mê xây dựng các giải pháp phần mềm tối ưu và kiến trúc hệ thống hiện đại. Luôn tìm kiếm cơ hội học hỏi và đóng góp giá trị thực tế. Đam mê backend development và các giải pháp hệ thống mở rộng.
+            </p>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="skills">
+            <h2 class="skills-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
+                    <p>Python</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"></div>
+                    <p>C++</p>
+                </div>
+                <div class="skill-card highlight">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core"></div>
+                    <p>ASP.NET Core</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server"></div>
+                    <p>SQL Server</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
+                    <p>HTML & CSS</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
+                    <p>JavaScript</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
+                    <p>Git Control</p>
+                </div>
+                <div class="skill-card">
+                    <div class="skill-icon"><i data-lucide="layout"></i></div>
+                    <p>Figma</p>
                 </div>
             </div>
-            <div class="education-card">
-                <i class="fas fa-graduation-cap"></i>
-                <h3>Đại học Nguyễn Tất Thành</h3>
-                <p>Khoa Công nghệ Thông tin</p>
-                <p>Ngành Kỹ sư phần mềm</p>
-                <p>2022 - 2026</p>
-                <div class="gpa-badge">
-                    <i class="fas fa-star"></i> GPA: 3.31/4.0
-                </div>
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills">
-        <div class="section-header">
-            <h2 class="section-title">Kỹ Năng <span>Cốt Lõi</span></h2>
-            <p class="section-desc">Công nghệ và kỹ năng tôi đã nắm vững qua quá trình học tập và thực hành</p>
-        </div>
-        <div class="skills-container">
-            <div class="skills-category">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-laptop-code"></i>
-                    </div>
-                    <h3>Frontend Development</h3>
+        <!-- Portfolio Section -->
+        <section id="projects" class="portfolio">
+            <div class="portfolio-header">
+                <div class="portfolio-title-group">
+                    <h2 class="portfolio-title">Projects Showcase</h2>
+                    <p class="portfolio-subtitle">Featured Work & Case Studies</p>
                 </div>
-                <div class="skill-list">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">HTML5 & CSS3</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">ReactJS</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">React Native</span>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
+                <div class="slider-controls">
+                    <button id="prevProject" class="slider-btn" aria-label="Previous Project">
+                        <i data-lucide="arrow-left"></i>
+                    </button>
+                    <button id="nextProject" class="slider-btn" aria-label="Next Project">
+                        <i data-lucide="arrow-right"></i>
+                    </button>
                 </div>
             </div>
 
-            <div class="skills-category">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-server"></i>
+            <div class="project-showcase">
+                <!-- Project 1: Aurum -->
+                <div class="project-slide active" data-index="0">
+                    <div class="project-visual">
+                        <div class="main-image-container">
+                            <button class="img-nav prev" onclick="navigateProjectImages('aurum', -1)"><i data-lucide="chevron-left"></i></button>
+                            <img src="image/Aurum/dashboard_overview_1777785204792.png" alt="Aurum Platform" class="project-main-img" id="aurum-main">
+                            <button class="img-nav next" onclick="navigateProjectImages('aurum', 1)"><i data-lucide="chevron-right"></i></button>
+                        </div>
+                        <div class="image-pagination" id="aurum-dots">
+                            <span class="img-dot active" onclick="jumpToProjectImage('aurum', 0)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('aurum', 1)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('aurum', 2)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('aurum', 3)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('aurum', 4)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('aurum', 5)"></span>
+                        </div>
                     </div>
-                    <h3>Backend Development</h3>
+                    <div class="project-content">
+                        <div class="project-tag">Chemistry Lab Simulator</div>
+                        <h3 class="project-name">Aurum Platform</h3>
+                        <p class="project-description">
+                            Aurum là một nền tảng giáo dục hóa học đột phá, kết hợp giữa mô phỏng thí nghiệm thực tế và các yếu tố gamification hấp dẫn. Nền tảng xây dựng một lộ trình học tập (Journey Map) bài bản, cho phép người dùng thực hành các phản ứng hóa học trong môi trường Lab ảo an toàn, tham gia Đấu trường (Arena) để so tài kiến thức và sưu tầm các nguyên tố thông qua hệ thống nhiệm vụ và túi đồ cá nhân.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature"><i data-lucide="swords"></i> <span>Đấu trường Hóa học (PVP Arena) & Xếp hạng</span></div>
+                            <div class="feature"><i data-lucide="trophy"></i> <span>Hệ thống Gamification (XP, Level, Streak)</span></div>
+                            <div class="feature"><i data-lucide="map"></i> <span>Lộ trình học tập tương tác (Journey Map)</span></div>
+                            <div class="feature"><i data-lucide="beaker"></i> <span>Mô phỏng Lab ảo & Bảng tuần hoàn 3D</span></div>
+                        </div>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">Next.js</span>
+                            <span class="tech-badge">Tailwind CSS</span>
+                            <span class="tech-badge">Three.js</span>
+                            <span class="tech-badge">Framer Motion</span>
+                            <span class="tech-badge">Supabase</span>
+                            <span class="tech-badge">Lucide React</span>
+                        </div>
+                        <div class="project-actions">
+                            <a href="https://chem-aurum.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Live Demo</a>
+                            <a href="https://github.com/nguyenthanhtie/AURUM" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i data-lucide="github"></i> Code</a>
+                        </div>
+                    </div>
                 </div>
-                <div class="skill-list">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Node.js</span>
-                            <span class="skill-percent">85%</span>
+
+                <!-- Project 2: Beauty LittleFish -->
+                <div class="project-slide" data-index="1">
+                    <div class="project-visual">
+                        <div class="main-image-container">
+                            <button class="img-nav prev" onclick="navigateProjectImages('littlefish', -1)"><i data-lucide="chevron-left"></i></button>
+                            <img src="image/LittleFish/31361382703354435724.jpg" alt="Beauty LittleFish" class="project-main-img" id="littlefish-main">
+                            <button class="img-nav next" onclick="navigateProjectImages('littlefish', 1)"><i data-lucide="chevron-right"></i></button>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
+                        <div class="image-pagination" id="littlefish-dots">
+                            <span class="img-dot active" onclick="jumpToProjectImage('littlefish', 0)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 1)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 2)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 3)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 4)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 5)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 6)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 7)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 8)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 9)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 10)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 11)"></span>
+                            <span class="img-dot" onclick="jumpToProjectImage('littlefish', 12)"></span>
                         </div>
                     </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Java</span>
-                            <span class="skill-percent">75%</span>
+                    <div class="project-content">
+                        <div class="project-tag">E-commerce Platform</div>
+                        <h3 class="project-name">Beauty LittleFish</h3>
+                        <p class="project-description">
+                            Beauty LittleFish là website thương mại điện tử mỹ phẩm cao cấp, tập trung vào trải nghiệm mua sắm mượt mà, quản lý dữ liệu sản phẩm thông minh và tối ưu hóa hiệu năng hiển thị.
+                        </p>
+                        <div class="project-features">
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Quản lý tài khoản & Bảo mật người dùng</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống biến thể sản phẩm & Giỏ hàng thông minh</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tìm kiếm, lọc & Sắp xếp nâng cao</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Đánh giá sản phẩm đa phương tiện (Star, Text, Image)</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Trang Admin: Quản lý kho, đơn hàng & CMS</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống Voucher & Khuyến mãi động</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tối ưu SEO: Friendly URL, Metadata & Sitemap</span></div>
                         </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 75%"></div>
+                        <div class="project-tech-stack">
+                            <span class="tech-badge">ASP.NET Core 8.0</span>
+                            <span class="tech-badge">Entity Framework Core</span>
+                            <span class="tech-badge">SQL Server</span>
+                            <span class="tech-badge">Razor Views</span>
+                            <span class="tech-badge">jQuery</span>
+                            <span class="tech-badge">Bootstrap</span>
+                            <span class="tech-badge">Mailchimp</span>
                         </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">PHP</span>
-                            <span class="skill-percent">70%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 70%"></div>
+                        <div class="project-actions">
+                            <a href="https://beautylittlefish.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Store</a>
+                            <a href="https://github.com/twngvi/Beauty_LittleFish" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i data-lucide="github"></i> Code</a>
                         </div>
                     </div>
                 </div>
             </div>
 
-            <div class="skills-category">
-                <div class="category-header">
-                    <div class="category-icon">
-                        <i class="fas fa-database"></i>
+            <div class="portfolio-dots">
+                <span class="dot active" data-index="0"></span>
+                <span class="dot" data-index="1"></span>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="experience">
+            <h2 class="experience-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-year">2022 - 2026</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>IT Student & Researcher</h3>
+                        <h4>Nguyễn Tất Thành University</h4>
+                        <p>Tập trung vào phát triển Backend và quản lý quy trình. Nghiên cứu các giải pháp phần mềm tối ưu và kiến trúc hệ thống hiện đại. GPA 3.8/4.0.</p>
                     </div>
-                    <h3>Database & Tools</h3>
                 </div>
-                <div class="skill-list">
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">MySQL & MongoDB</span>
-                            <span class="skill-percent">85%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Git & GitHub</span>
-                            <span class="skill-percent">90%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span class="skill-name">Figma & VS Code</span>
-                            <span class="skill-percent">80%</span>
-                        </div>
-                        <div class="skill-bar">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
+                <div class="timeline-item">
+                    <div class="timeline-year">2025</div>
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Certified Professional</h3>
+                        <h4>Google, IBM & Microsoft Certification</h4>
+                        <p>Hoàn thành các chứng chỉ chuyên môn quốc tế:
+                            <br>• Google IT Support Specialist
+                            <br>• Google Data Analytics Professional
+                            <br>• IBM Full Stack Software Developer
+                            <br>• Microsoft Office Specialist (MOS) 2025
+                            <br>• BigQuery Data Insights Skill Badge
+                        </p>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Projects Section -->
-    <section id="projects">
-        <div class="section-header">
-            <h2 class="section-title">Dự Án <span>Nổi Bật</span></h2>
-            <p class="section-desc">Những dự án tôi đã phát triển và đóng góp</p>
-        </div>
-        
-        <div class="projects-wrapper">
-            <!-- Featured Project -->
-            <div class="featured-project">
-                <div class="project-preview">
-                    <div class="preview-badge">
-                        <i class="fas fa-star"></i>
-                        <span>Featured</span>
-                    </div>
-                    <div class="preview-icon">
-                        <i class="fas fa-comments"></i>
-                    </div>
-                </div>
-                <div class="project-details">
-                    <div class="project-meta">
-                        <span class="project-status">
-                            <i class="fas fa-circle"></i> Completed
-                        </span>
-                        <span class="project-date">
-                            <i class="far fa-calendar"></i> 2024
-                        </span>
-                    </div>
-                    <h3>App Chat Real-time</h3>
-                    <span class="project-role">
-                        <i class="fas fa-user-tag"></i> Front-end Developer
-                    </span>
-                    <p class="project-desc">
-                        Ứng dụng nhắn tin thời gian thực với giao diện hiện đại, hỗ trợ gửi ảnh, video và thông báo đẩy. Tích hợp Firebase cho xác thực và lưu trữ dữ liệu real-time.
+        <!-- Testimonial Section -->
+        <section class="testimonial">
+            <h2 class="testimonial-title">Testimonial</h2>
+            <div class="testimonial-container">
+                <div class="testimonial-content">
+                    <div class="quote-line"></div>
+                    <p class="quote-text">
+                        "The quality of work and attention to detail is exceptional. Highly professional and always looking for the most optimized solution for complex problems."
                     </p>
-                    <div class="project-tech">
-                        <span class="tech-tag">
-                            <i class="fab fa-react"></i> React Native
-                        </span>
-                        <span class="tech-tag">
-                            <i class="fas fa-fire"></i> Firebase
-                        </span>
-                        <span class="tech-tag">
-                            <i class="fas fa-mobile-alt"></i> Expo
-                        </span>
-                    </div>
-                    <div class="project-links">
-                        <a href="https://github.com/nguyenthanhtie/Chillchat" class="project-link" target="_blank">
-                            <i class="fab fa-github"></i> View Code
-                        </a>
-                        
-                    </div>
+                    <p class="quote-author">Academic Excellence<span>Student @ NTTU</span></p>
+                </div>
+                <div class="testimonial-image">
+                    <img src="unnamed.jpg" alt="Author">
                 </div>
             </div>
+        </section>
 
-            <!-- Other Projects Grid -->
-            <div class="projects-grid">
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-icon">
-                            <i class="fas fa-book"></i>
-                        </div>
-                        <div class="project-overlay">
-                          <a href="https://github.com/nguyenthanhtie/Book" class="overlay-link" target="_blank">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-header">
-                            <h4>Web Quản Lý Bán Sách</h4>
-                            <span class="project-tag">Full-stack</span>
-                        </div>
-                        <p class="project-summary">
-                            Hệ thống thương mại điện tử bán sách với quản lý đơn hàng và admin panel.
-                        </p>
-                        <div class="project-stack">
-                            <span class="stack-item">PHP</span>
-                            <span class="stack-item">MySQL</span>
-                            <span class="stack-item">JavaScript</span>
-                        </div>
-                    </div>
+        <!-- Contact Section -->
+        <section id="contact" class="contact">
+            <h2 class="contact-title">Contact Me</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <i data-lucide="mail"></i>
+                    <p>nguyenthanhtien2120@gmail.com</p>
                 </div>
-
-                <div class="project-card">
-                    <div class="project-thumbnail">
-                        <div class="thumbnail-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <div class="project-overlay">
-                          <a href="https://github.com/nguyenthanhtie/KL" class="overlay-link" target="_blank">
-                                <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="project-info">
-                        <div class="project-header">
-                            <h4>Web Hỗ Trợ Học Tập</h4>
-                            <span class="project-tag">Full-stack</span>
-                        </div>
-                        <p class="project-summary">
-                            Nền tảng học tập trực tuyến với gamification, badge và bảng xếp hạng.
-                        </p>
-                        <div class="project-stack">
-                            <span class="stack-item">ReactJS</span>
-                            <span class="stack-item">Node.js</span>
-                            <span class="stack-item">MongoDB</span>
-                        </div>
-                    </div>
+                <div class="contact-item">
+                    <i data-lucide="phone"></i>
+                    <p>0334681752</p>
+                </div>
+                <div class="contact-item">
+                    <i data-lucide="map-pin"></i>
+                    <p>Phú Nhuận, HCM, Vietnam</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Certificates Section -->
-    <section class="certificates">
-        <div class="section-header">
-
-            <h2 class="section-title">Chứng <span>Chỉ</span></h2>
-        </div>
-        <div class="cert-grid">
-            <a href="https://www.credly.com/badges/1b7081c9-4425-4e5e-ba75-9daab0221612/linked_in_profile" target="_blank" class="cert-card">
-                <div class="cert-icon"><i class="fab fa-google"></i></div>
-                <div class="cert-info">
-                    <h3>Derive Insights from BigQuery Data</h3>
-                    <p>Google Cloud - Skill Badge</p>
-                </div>
-                <div class="cert-link"><i class="fas fa-external-link-alt"></i></div>
-            </a>
-            <a href="https://www.coursera.org/account/accomplishments/specialization/YGV2F3I1QO98" target="_blank" class="cert-card">
-                <div class="cert-icon"><i class="fab fa-google"></i></div>
-                <div class="cert-info">
-                    <h3>Google Data Analytics</h3>
-                    <p>Coursera - 2025</p>
-                </div>
-                <div class="cert-link"><i class="fas fa-external-link-alt"></i></div>
-            </a>
-            <a href="https://www.coursera.org/account/accomplishments/specialization/LBDZBSRSJRSL" target="_blank" class="cert-card">
-                <div class="cert-icon"><i class="fab fa-google"></i></div>
-                <div class="cert-info">
-                    <h3>Google IT Support</h3>
-                    <p>Coursera - 2025</p>
-                </div>
-                <div class="cert-link"><i class="fas fa-external-link-alt"></i></div>
-            </a>
-            <a href="https://www.coursera.org/account/accomplishments/specialization/S445DMX8URWF" target="_blank" class="cert-card">
-                <div class="cert-icon"><i class="fas fa-laptop-code"></i></div>
-                <div class="cert-info">
-                    <h3>IBM Full Stack Software Developer</h3>
-                    <p>Coursera - 2025</p>
-                </div>
-                <div class="cert-link"><i class="fas fa-external-link-alt"></i></div>
-            </a>
-        </div>
-    </section>
-
-    <!-- Contact Section -->
-    <section id="contact">
-        <div class="section-header" data-aos="fade-up">
-            <h2 class="section-title">Kết Nối <span>Với Tôi</span></h2>
-        </div>
-        <div class="contact-container">
-            <div class="contact-info">
-                <h3>Hãy liên hệ!</h3>
-                <p>Tôi luôn sẵn sàng trao đổi về công việc và các cơ hội hợp tác.</p>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                    <div>
-                        <span>Điện thoại</span>
-                        <a href="tel:0334681752">0334 681 752</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                    <div>
-                        <span>Email</span>
-                        <a href="mailto:nguyenthantien2120@gmail.com">nguyenthantien2120@gmail.com</a>
-                    </div>
-                </div>
-                <div class="contact-item">
-                    <div class="contact-icon"><i class="fab fa-github"></i></div>
-                    <div>
-                        <span>GitHub</span>
-                        <a href="https://github.com/nguyenthanhtie" target="_blank">nguyenthanhtie</a>
-                    </div>
-                </div>
+            <div class="social-footer">
+                <a href="#"><i data-lucide="facebook"></i></a>
+                <a href="#"><i data-lucide="twitter"></i></a>
+                <a href="#"><i data-lucide="linkedin"></i></a>
+                <a href="#"><i data-lucide="phone"></i></a>
             </div>
-            <form class="contact-form">
-                <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Họ và tên">
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Email của bạn">
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" placeholder="Nội dung tin nhắn"></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary" style="width: 100%;">
-                    <i class="fas fa-paper-plane"></i> Gửi Tin Nhắn
-                </button>
-            </form>
-        </div>
-    </section>
+            <p class="footer-note">"Thanks for Scrolling"</p>
+        </section>
+    </main>
 
-    <!-- Footer -->
-    <footer>
-        <div class="footer-social">
-            <a href="https://github.com/nguyenthanhtie" target="_blank" class="social-link"><i class="fab fa-github"></i></a>
-            <a href="mailto:nguyenthantien2120@gmail.com" class="social-link"><i class="fas fa-envelope"></i></a>
-            <a href="tel:0334681752" class="social-link"><i class="fas fa-phone"></i></a>
-        </div>
-        <p>© 2024 Nguyễn Thanh Tiền. Made with ❤️</p>
+    <footer class="footer">
+        <p>&copy; 2026 Nguyễn Thanh Tiền. Handcrafted with Precision.</p>
     </footer>
 
-    <!-- Back to Top Button -->
-    <button class="back-to-top" id="backToTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <!-- Scripts -->
-    <!-- AOS Script removed -->
-    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.7.0/dist/vanilla-tilt.min.js" defer></script>
-    <!-- Thêm ScrollTrigger -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js" defer></script>
-    
-    <script src="index.js" defer></script>
+    <script src="index.js"></script>
+    <script>
+        // Initialize Lucide Icons
+        lucide.createIcons();
+    </script>
 </body>
+
 </html>
