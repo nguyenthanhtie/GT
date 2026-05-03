@@ -181,4 +181,32 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    // --- CV Modal Logic ---
+    const cvModal = document.getElementById('cvModal');
+    const viewCvBtn = document.getElementById('viewCvBtn');
+    const closeCvBtn = document.getElementById('closeCvBtn');
+    const modalOverlay = cvModal.querySelector('.modal-overlay');
+
+    if (cvModal && viewCvBtn && closeCvBtn) {
+        const openModal = () => {
+            cvModal.classList.add('active');
+            document.body.classList.add('modal-open');
+        };
+
+        const closeModal = () => {
+            cvModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        };
+
+        viewCvBtn.addEventListener('click', openModal);
+        closeCvBtn.addEventListener('click', closeModal);
+        modalOverlay.addEventListener('click', closeModal);
+
+        // Close on Escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && cvModal.classList.contains('active')) {
+                closeModal();
+            }
+        });
+    }
 });

@@ -40,7 +40,12 @@
                 <div class="hero-text">
                     <p class="hero-intro">I'M <span>Nguyễn Thanh Tiền</span></p>
                     <h1 class="hero-role">IT Student & <br>Backend Developer</h1>
-                    <a href="#contact" class="btn btn-primary">Contact Me</a>
+                    <div class="hero-actions">
+                        <a href="#contact" class="btn btn-secondary">Contact Me</a>
+                        <button id="viewCvBtn" class="btn btn-outline">
+                            <i data-lucide="file-text"></i> View CV
+                        </button>
+                    </div>
                 </div>
                 <div class="hero-visual">
                     <div class="hero-image-wrapper">
@@ -63,7 +68,9 @@
                 <div class="title-line"></div>
             </div>
             <p class="about-description">
-                Tôi là sinh viên ngành Công nghệ Thông tin, đam mê xây dựng các giải pháp phần mềm tối ưu và kiến trúc hệ thống hiện đại. Luôn tìm kiếm cơ hội học hỏi và đóng góp giá trị thực tế. Đam mê backend development và các giải pháp hệ thống mở rộng.
+                Tôi là sinh viên ngành Công nghệ Thông tin, đam mê xây dựng các giải pháp phần mềm tối ưu và kiến trúc
+                hệ thống hiện đại. Luôn tìm kiếm cơ hội học hỏi và đóng góp giá trị thực tế. Đam mê backend development
+                và các giải pháp hệ thống mở rộng.
             </p>
         </section>
 
@@ -72,31 +79,45 @@
             <h2 class="skills-title">My Skills</h2>
             <div class="skills-grid">
                 <div class="skill-card">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg"
+                            alt="Python"></div>
                     <p>Python</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg"
+                            alt="C++"></div>
                     <p>C++</p>
                 </div>
                 <div class="skill-card highlight">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg" alt=".NET Core"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dot-net/dot-net-original.svg"
+                            alt=".NET Core"></div>
                     <p>ASP.NET Core</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg" alt="SQL Server"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftsqlserver/microsoftsqlserver-plain.svg"
+                            alt="SQL Server"></div>
                     <p>SQL Server</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg"
+                            alt="HTML5"></div>
                     <p>HTML & CSS</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+                            alt="JavaScript"></div>
                     <p>JavaScript</p>
                 </div>
                 <div class="skill-card">
-                    <div class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
+                    <div class="skill-icon"><img
+                            src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git">
+                    </div>
                     <p>Git Control</p>
                 </div>
                 <div class="skill-card">
@@ -128,9 +149,12 @@
                 <div class="project-slide active" data-index="0">
                     <div class="project-visual">
                         <div class="main-image-container">
-                            <button class="img-nav prev" onclick="navigateProjectImages('aurum', -1)"><i data-lucide="chevron-left"></i></button>
-                            <img src="image/Aurum/dashboard_overview_1777785204792.png" alt="Aurum Platform" class="project-main-img" id="aurum-main">
-                            <button class="img-nav next" onclick="navigateProjectImages('aurum', 1)"><i data-lucide="chevron-right"></i></button>
+                            <button class="img-nav prev" onclick="navigateProjectImages('aurum', -1)"><i
+                                    data-lucide="chevron-left"></i></button>
+                            <img src="image/Aurum/dashboard_overview_1777785204792.png" alt="Aurum Platform"
+                                class="project-main-img" id="aurum-main">
+                            <button class="img-nav next" onclick="navigateProjectImages('aurum', 1)"><i
+                                    data-lucide="chevron-right"></i></button>
                         </div>
                         <div class="image-pagination" id="aurum-dots">
                             <span class="img-dot active" onclick="jumpToProjectImage('aurum', 0)"></span>
@@ -145,13 +169,21 @@
                         <div class="project-tag">Chemistry Lab Simulator</div>
                         <h3 class="project-name">Aurum Platform</h3>
                         <p class="project-description">
-                            Aurum là một nền tảng giáo dục hóa học đột phá, kết hợp giữa mô phỏng thí nghiệm thực tế và các yếu tố gamification hấp dẫn. Nền tảng xây dựng một lộ trình học tập (Journey Map) bài bản, cho phép người dùng thực hành các phản ứng hóa học trong môi trường Lab ảo an toàn, tham gia Đấu trường (Arena) để so tài kiến thức và sưu tầm các nguyên tố thông qua hệ thống nhiệm vụ và túi đồ cá nhân.
+                            Aurum là một nền tảng giáo dục hóa học đột phá, kết hợp giữa mô phỏng thí nghiệm thực tế và
+                            các yếu tố gamification hấp dẫn. Nền tảng xây dựng một lộ trình học tập (Journey Map) bài
+                            bản, cho phép người dùng thực hành các phản ứng hóa học trong môi trường Lab ảo an toàn,
+                            tham gia Đấu trường (Arena) để so tài kiến thức và sưu tầm các nguyên tố thông qua hệ thống
+                            nhiệm vụ và túi đồ cá nhân.
                         </p>
                         <div class="project-features">
-                            <div class="feature"><i data-lucide="swords"></i> <span>Đấu trường Hóa học (PVP Arena) & Xếp hạng</span></div>
-                            <div class="feature"><i data-lucide="trophy"></i> <span>Hệ thống Gamification (XP, Level, Streak)</span></div>
-                            <div class="feature"><i data-lucide="map"></i> <span>Lộ trình học tập tương tác (Journey Map)</span></div>
-                            <div class="feature"><i data-lucide="beaker"></i> <span>Mô phỏng Lab ảo & Bảng tuần hoàn 3D</span></div>
+                            <div class="feature"><i data-lucide="swords"></i> <span>Đấu trường Hóa học (PVP Arena) & Xếp
+                                    hạng</span></div>
+                            <div class="feature"><i data-lucide="trophy"></i> <span>Hệ thống Gamification (XP, Level,
+                                    Streak)</span></div>
+                            <div class="feature"><i data-lucide="map"></i> <span>Lộ trình học tập tương tác (Journey
+                                    Map)</span></div>
+                            <div class="feature"><i data-lucide="beaker"></i> <span>Mô phỏng Lab ảo & Bảng tuần hoàn
+                                    3D</span></div>
                         </div>
                         <div class="project-tech-stack">
                             <span class="tech-badge">Next.js</span>
@@ -162,8 +194,10 @@
                             <span class="tech-badge">Lucide React</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://chem-aurum.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">View Live Demo</a>
-                            <a href="https://github.com/nguyenthanhtie/AURUM" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i data-lucide="github"></i> Code</a>
+                            <a href="https://chem-aurum.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-secondary">View Live Demo</a>
+                            <a href="https://github.com/nguyenthanhtie/AURUM" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-outline"><i data-lucide="github"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -172,9 +206,12 @@
                 <div class="project-slide" data-index="1">
                     <div class="project-visual">
                         <div class="main-image-container">
-                            <button class="img-nav prev" onclick="navigateProjectImages('littlefish', -1)"><i data-lucide="chevron-left"></i></button>
-                            <img src="image/LittleFish/31361382703354435724.jpg" alt="Beauty LittleFish" class="project-main-img" id="littlefish-main">
-                            <button class="img-nav next" onclick="navigateProjectImages('littlefish', 1)"><i data-lucide="chevron-right"></i></button>
+                            <button class="img-nav prev" onclick="navigateProjectImages('littlefish', -1)"><i
+                                    data-lucide="chevron-left"></i></button>
+                            <img src="image/LittleFish/31361382703354435724.jpg" alt="Beauty LittleFish"
+                                class="project-main-img" id="littlefish-main">
+                            <button class="img-nav next" onclick="navigateProjectImages('littlefish', 1)"><i
+                                    data-lucide="chevron-right"></i></button>
                         </div>
                         <div class="image-pagination" id="littlefish-dots">
                             <span class="img-dot active" onclick="jumpToProjectImage('littlefish', 0)"></span>
@@ -196,16 +233,24 @@
                         <div class="project-tag">E-commerce Platform</div>
                         <h3 class="project-name">Beauty LittleFish</h3>
                         <p class="project-description">
-                            Beauty LittleFish là website thương mại điện tử mỹ phẩm cao cấp, tập trung vào trải nghiệm mua sắm mượt mà, quản lý dữ liệu sản phẩm thông minh và tối ưu hóa hiệu năng hiển thị.
+                            Beauty LittleFish là website thương mại điện tử mỹ phẩm cao cấp, tập trung vào trải nghiệm
+                            mua sắm mượt mà, quản lý dữ liệu sản phẩm thông minh và tối ưu hóa hiệu năng hiển thị.
                         </p>
                         <div class="project-features">
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Quản lý tài khoản & Bảo mật người dùng</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống biến thể sản phẩm & Giỏ hàng thông minh</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tìm kiếm, lọc & Sắp xếp nâng cao</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Đánh giá sản phẩm đa phương tiện (Star, Text, Image)</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Trang Admin: Quản lý kho, đơn hàng & CMS</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống Voucher & Khuyến mãi động</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tối ưu SEO: Friendly URL, Metadata & Sitemap</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Quản lý tài khoản & Bảo mật
+                                    người dùng</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống biến thể sản phẩm &
+                                    Giỏ hàng thông minh</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tìm kiếm, lọc & Sắp xếp nâng
+                                    cao</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Đánh giá sản phẩm đa phương
+                                    tiện (Star, Text, Image)</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Trang Admin: Quản lý kho, đơn
+                                    hàng & CMS</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống Voucher & Khuyến mãi
+                                    động</span></div>
+                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tối ưu SEO: Friendly URL,
+                                    Metadata & Sitemap</span></div>
                         </div>
                         <div class="project-tech-stack">
                             <span class="tech-badge">ASP.NET Core 8.0</span>
@@ -217,8 +262,10 @@
                             <span class="tech-badge">Mailchimp</span>
                         </div>
                         <div class="project-actions">
-                            <a href="https://beautylittlefish.vercel.app/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">Visit Store</a>
-                            <a href="https://github.com/twngvi/Beauty_LittleFish" target="_blank" rel="noopener noreferrer" class="btn btn-outline"><i data-lucide="github"></i> Code</a>
+                            <a href="https://beautylittlefish.vercel.app/" target="_blank" rel="noopener noreferrer"
+                                class="btn btn-secondary">Visit Store</a>
+                            <a href="https://github.com/twngvi/Beauty_LittleFish" target="_blank"
+                                rel="noopener noreferrer" class="btn btn-outline"><i data-lucide="github"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -240,7 +287,8 @@
                     <div class="timeline-content">
                         <h3>IT Student & Researcher</h3>
                         <h4>Nguyễn Tất Thành University</h4>
-                        <p>Tập trung vào phát triển Backend và quản lý quy trình. Nghiên cứu các giải pháp phần mềm tối ưu và kiến trúc hệ thống hiện đại. GPA 3.8/4.0.</p>
+                        <p>Tập trung vào phát triển Backend và quản lý quy trình. Nghiên cứu các giải pháp phần mềm tối
+                            ưu và kiến trúc hệ thống hiện đại. GPA 3.4/4.0.</p>
                     </div>
                 </div>
                 <div class="timeline-item">
@@ -268,7 +316,8 @@
                 <div class="testimonial-content">
                     <div class="quote-line"></div>
                     <p class="quote-text">
-                        "The quality of work and attention to detail is exceptional. Highly professional and always looking for the most optimized solution for complex problems."
+                        "The quality of work and attention to detail is exceptional. Highly professional and always
+                        looking for the most optimized solution for complex problems."
                     </p>
                     <p class="quote-author">Academic Excellence<span>Student @ NTTU</span></p>
                 </div>
@@ -309,9 +358,30 @@
         <p>&copy; 2026 Nguyễn Thanh Tiền. Handcrafted with Precision.</p>
     </footer>
 
+    <!-- CV Modal -->
+    <div id="cvModal" class="modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Curriculum Vitae</h3>
+                <button class="modal-close" id="closeCvBtn">
+                    <i data-lucide="x"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <iframe src="White Minimalist Web Developer Resume.pdf#toolbar=0" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <a href="White Minimalist Web Developer Resume.pdf" download class="btn btn-secondary">
+                    <i data-lucide="download"></i> Download CV
+                </a>
+            </div>
+        </div>
+    </div>
+
     <script src="index.js"></script>
     <script>
-        // Initialize Lucide Icons
+        // Initialize Lucide icons
         lucide.createIcons();
     </script>
 </body>
