@@ -68,10 +68,6 @@ document.addEventListener('DOMContentLoaded', () => {
         projectSlides[index].classList.add('active');
         if (dots[index]) dots[index].classList.add('active');
         currentProjectIndex = index;
-
-        if (window.lucide) {
-            window.lucide.createIcons();
-        }
     }
 
     if (prevBtn && nextBtn) {

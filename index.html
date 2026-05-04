@@ -13,8 +13,6 @@
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Outfit:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
-    <!-- Lucide Icons -->
-    <script src="https://cdn.jsdelivr.net/npm/lucide@0.435.0/dist/umd/lucide.min.js"></script>
     <!-- Font Awesome for Brands -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
@@ -28,11 +26,11 @@
             <div class="hero-container">
                 <div class="hero-text">
                     <p class="hero-intro">I'M <span>Nguyễn Thanh Tiền</span></p>
-                    <h1 class="hero-role">IT Student & <br>Backend Developer</h1>
+                    <h1 class="hero-role">Software Engineer</h1>
                     <div class="hero-actions">
                         <a href="#contact" class="btn btn-secondary">Contact Me</a>
                         <button id="viewCvBtn" class="btn btn-outline">
-                            <i data-lucide="file-text"></i> View CV
+                            <i class="fa-solid fa-file-lines"></i> View CV
                         </button>
                     </div>
                 </div>
@@ -41,11 +39,24 @@
                         <img src="unnamed.jpg" alt="Nguyễn Thanh Tiền" class="hero-image">
                     </div>
                     <div class="social-sidebar">
-                        <a href="https://github.com/nguyenthanhtie" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/thanhtie/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin"></i></a>
-                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="https://github.com/nguyenthanhtie" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/thanhtie/" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-linkedin"></i></a>
+                        <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><i
+                                class="fa-brands fa-facebook"></i></a>
                         <a href="tel:0334681752"><i class="fa-solid fa-phone"></i></a>
                     </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <div class="arrows">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
             </div>
         </section>
@@ -58,7 +69,8 @@
             </div>
             <p class="about-description">
                 Tôi là sinh viên ngành Công nghệ Thông tin, đam mê xây dựng các giải pháp phần mềm tối ưu và kiến trúc
-                hệ thống hiện đại. Luôn tìm kiếm cơ hội học hỏi và đóng góp giá trị thực tế. Đam mê backend development
+                hệ thống hiện đại. Luôn tìm kiếm cơ hội học hỏi và đóng góp giá trị thực tế. Đam mê Software Engineering
+                và phát triển các hệ thống Backend quy mô lớn.
                 và các giải pháp hệ thống mở rộng.
             </p>
         </section>
@@ -109,9 +121,39 @@
                     </div>
                     <p>Git Control</p>
                 </div>
-                <div class="skill-card">
-                    <div class="skill-icon"><i data-lucide="layout"></i></div>
-                    <p>Figma</p>
+                <div class="skill-card highlight">
+                    <div class="skill-icon"><i class="fa-solid fa-headset"></i></div>
+                    <p>Helpdesk & IT Support</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- IT Support & Helpdesk Section -->
+        <section id="helpdesk" class="helpdesk">
+            <div class="section-title">
+                <h2>IT Support & Helpdesk</h2>
+                <div class="title-line"></div>
+            </div>
+            <div class="helpdesk-grid">
+                <div class="helpdesk-item">
+                    <div class="helpdesk-icon"><i class="fa-solid fa-headset"></i></div>
+                    <h3>User Support</h3>
+                    <p>Hỗ trợ cài đặt phần mềm, Office và khắc phục các lỗi hệ điều hành cơ bản cho người dùng.</p>
+                </div>
+                <div class="helpdesk-item">
+                    <div class="helpdesk-icon"><i class="fa-solid fa-microchip"></i></div>
+                    <h3>Hardware Setup</h3>
+                    <p>Lắp đặt, kiểm tra và bảo trì các thiết bị phần cứng máy tính và linh kiện cơ bản.</p>
+                </div>
+                <div class="helpdesk-item">
+                    <div class="helpdesk-icon"><i class="fa-solid fa-print"></i></div>
+                    <h3>Peripheral Devices</h3>
+                    <p>Cài đặt và xử lý sự cố máy in, máy scan và các thiết bị ngoại vi văn phòng phổ biến.</p>
+                </div>
+                <div class="helpdesk-item">
+                    <div class="helpdesk-icon"><i class="fa-solid fa-wifi"></i></div>
+                    <h3>Basic Networking</h3>
+                    <p>Hỗ trợ kết nối mạng nội bộ, Wi-Fi và các sự cố kết nối Internet cơ bản.</p>
                 </div>
             </div>
         </section>
@@ -125,10 +167,10 @@
                 </div>
                 <div class="slider-controls">
                     <button id="prevProject" class="slider-btn" aria-label="Previous Project">
-                        <i data-lucide="arrow-left"></i>
+                        <i class="fa-solid fa-arrow-left"></i>
                     </button>
                     <button id="nextProject" class="slider-btn" aria-label="Next Project">
-                        <i data-lucide="arrow-right"></i>
+                        <i class="fa-solid fa-arrow-right"></i>
                     </button>
                 </div>
             </div>
@@ -139,11 +181,11 @@
                     <div class="project-visual">
                         <div class="main-image-container">
                             <button class="img-nav prev" onclick="navigateProjectImages('aurum', -1)"><i
-                                    data-lucide="chevron-left"></i></button>
+                                    class="fa-solid fa-chevron-left"></i></button>
                             <img src="image/Aurum/dashboard_overview_1777785204792.png" alt="Aurum Platform"
                                 class="project-main-img" id="aurum-main">
                             <button class="img-nav next" onclick="navigateProjectImages('aurum', 1)"><i
-                                    data-lucide="chevron-right"></i></button>
+                                    class="fa-solid fa-chevron-right"></i></button>
                         </div>
                         <div class="image-pagination" id="aurum-dots">
                             <span class="img-dot active" onclick="jumpToProjectImage('aurum', 0)"></span>
@@ -165,13 +207,17 @@
                             nhiệm vụ và túi đồ cá nhân.
                         </p>
                         <div class="project-features">
-                            <div class="feature"><i data-lucide="swords"></i> <span>Đấu trường Hóa học (PVP Arena) & Xếp
+                            <div class="feature"><i class="fa-solid fa-shield-halved"></i> <span>Đấu trường Hóa học (PVP
+                                    Arena) & Xếp
                                     hạng</span></div>
-                            <div class="feature"><i data-lucide="trophy"></i> <span>Hệ thống Gamification (XP, Level,
+                            <div class="feature"><i class="fa-solid fa-trophy"></i> <span>Hệ thống Gamification (XP,
+                                    Level,
                                     Streak)</span></div>
-                            <div class="feature"><i data-lucide="map"></i> <span>Lộ trình học tập tương tác (Journey
+                            <div class="feature"><i class="fa-solid fa-map-location-dot"></i> <span>Lộ trình học tập
+                                    tương tác (Journey
                                     Map)</span></div>
-                            <div class="feature"><i data-lucide="beaker"></i> <span>Mô phỏng Lab ảo & Bảng tuần hoàn
+                            <div class="feature"><i class="fa-solid fa-flask"></i> <span>Mô phỏng Lab ảo & Bảng tuần
+                                    hoàn
                                     3D</span></div>
                         </div>
                         <div class="project-tech-stack">
@@ -186,7 +232,7 @@
                             <a href="https://chem-aurum.vercel.app/" target="_blank" rel="noopener noreferrer"
                                 class="btn btn-secondary">View Live Demo</a>
                             <a href="https://github.com/nguyenthanhtie/AURUM" target="_blank" rel="noopener noreferrer"
-                                class="btn btn-outline"><i data-lucide="github"></i> Code</a>
+                                class="btn btn-outline"><i class="fa-brands fa-github"></i> Code</a>
                         </div>
                     </div>
                 </div>
@@ -196,11 +242,11 @@
                     <div class="project-visual">
                         <div class="main-image-container">
                             <button class="img-nav prev" onclick="navigateProjectImages('littlefish', -1)"><i
-                                    data-lucide="chevron-left"></i></button>
+                                    class="fa-solid fa-chevron-left"></i></button>
                             <img src="image/LittleFish/31361382703354435724.jpg" alt="Beauty LittleFish"
                                 class="project-main-img" id="littlefish-main">
                             <button class="img-nav next" onclick="navigateProjectImages('littlefish', 1)"><i
-                                    data-lucide="chevron-right"></i></button>
+                                    class="fa-solid fa-chevron-right"></i></button>
                         </div>
                         <div class="image-pagination" id="littlefish-dots">
                             <span class="img-dot active" onclick="jumpToProjectImage('littlefish', 0)"></span>
@@ -226,19 +272,26 @@
                             mua sắm mượt mà, quản lý dữ liệu sản phẩm thông minh và tối ưu hóa hiệu năng hiển thị.
                         </p>
                         <div class="project-features">
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Quản lý tài khoản & Bảo mật
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Quản lý tài khoản & Bảo
+                                    mật
                                     người dùng</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống biến thể sản phẩm &
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Hệ thống biến thể sản
+                                    phẩm &
                                     Giỏ hàng thông minh</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tìm kiếm, lọc & Sắp xếp nâng
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Tìm kiếm, lọc & Sắp xếp
+                                    nâng
                                     cao</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Đánh giá sản phẩm đa phương
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Đánh giá sản phẩm đa
+                                    phương
                                     tiện (Star, Text, Image)</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Trang Admin: Quản lý kho, đơn
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Trang Admin: Quản lý
+                                    kho, đơn
                                     hàng & CMS</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Hệ thống Voucher & Khuyến mãi
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Hệ thống Voucher &
+                                    Khuyến mãi
                                     động</span></div>
-                            <div class="feature"><i data-lucide="check-circle"></i> <span>Tối ưu SEO: Friendly URL,
+                            <div class="feature"><i class="fa-solid fa-circle-check"></i> <span>Tối ưu SEO: Friendly
+                                    URL,
                                     Metadata & Sitemap</span></div>
                         </div>
                         <div class="project-tech-stack">
@@ -254,7 +307,8 @@
                             <a href="https://beautylittlefish.vercel.app/" target="_blank" rel="noopener noreferrer"
                                 class="btn btn-secondary">Visit Store</a>
                             <a href="https://github.com/twngvi/Beauty_LittleFish" target="_blank"
-                                rel="noopener noreferrer" class="btn btn-outline"><i data-lucide="github"></i> Code</a>
+                                rel="noopener noreferrer" class="btn btn-outline"><i class="fa-brands fa-github"></i>
+                                Code</a>
                         </div>
                     </div>
                 </div>
@@ -279,11 +333,11 @@
                         <p>Tập trung vào phát triển Backend và quản lý quy trình. Nghiên cứu các giải pháp phần mềm tối
                             ưu và kiến trúc hệ thống hiện đại. GPA 3.35/4.0.</p>
                         <div class="academic-shortcut" id="viewAcademicBtn">
-                            <div class="shortcut-icon"><i data-lucide="award"></i></div>
+                            <div class="shortcut-icon"><i class="fa-solid fa-award"></i></div>
                             <div class="shortcut-content">
                                 <span class="shortcut-label">Kết quả học tập</span>
                                 <span class="shortcut-action">Bấm để xem chi tiết <i
-                                        data-lucide="chevron-right"></i></span>
+                                        class="fa-solid fa-chevron-right"></i></span>
                             </div>
                         </div>
                     </div>
@@ -329,15 +383,15 @@
             <h2 class="contact-title">Contact Me</h2>
             <div class="contact-grid">
                 <div class="contact-item">
-                    <i data-lucide="mail"></i>
+                    <i class="fa-solid fa-envelope"></i>
                     <p>nguyenthanhtien2120@gmail.com</p>
                 </div>
                 <div class="contact-item">
-                    <i data-lucide="phone"></i>
+                    <i class="fa-solid fa-phone"></i>
                     <p>0334681752</p>
                 </div>
                 <div class="contact-item">
-                    <i data-lucide="map-pin"></i>
+                    <i class="fa-solid fa-location-dot"></i>
                     <p>Phú Nhuận, HCM, Vietnam</p>
                 </div>
             </div>
@@ -346,9 +400,12 @@
                 <div class="connect-line"></div>
             </div>
             <div class="social-footer">
-                <a href="https://github.com/nguyenthanhtie" target="_blank" rel="noopener noreferrer" title="GitHub"><i class="fa-brands fa-github"></i></a>
-                <a href="https://www.linkedin.com/in/thanhtie/" target="_blank" rel="noopener noreferrer" title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
-                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                <a href="https://github.com/nguyenthanhtie" target="_blank" rel="noopener noreferrer" title="GitHub"><i
+                        class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/thanhtie/" target="_blank" rel="noopener noreferrer"
+                    title="LinkedIn"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" title="Facebook"><i
+                        class="fa-brands fa-facebook"></i></a>
                 <a href="tel:0334681752" title="Call Me"><i class="fa-solid fa-phone"></i></a>
             </div>
             <p class="footer-note">"Thanks for Scrolling"</p>
@@ -366,7 +423,7 @@
             <div class="modal-header">
                 <h3>Curriculum Vitae</h3>
                 <button class="modal-close" id="closeCvBtn">
-                    <i data-lucide="x"></i>
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="modal-body">
@@ -374,7 +431,7 @@
             </div>
             <div class="modal-footer">
                 <a href="CV_NguyenThanhTien_ThucTapSinh_IT.pdf" download class="btn btn-secondary">
-                    <i data-lucide="download"></i> Download CV
+                    <i class="fa-solid fa-download"></i> Download CV
                 </a>
             </div>
         </div>
@@ -387,7 +444,7 @@
             <div class="modal-header">
                 <h3>Kết Quả Học Tập</h3>
                 <button class="modal-close" id="closeAcademicBtn">
-                    <i data-lucide="x"></i>
+                    <i class="fa-solid fa-xmark"></i>
                 </button>
             </div>
             <div class="modal-body academic-modal-body">
@@ -397,9 +454,6 @@
     </div>
 
     <script src="index.js"></script>
-    <script>
-        // Initialize Lucide icons
-        lucide.createIcons();
     </script>
 </body>
 
