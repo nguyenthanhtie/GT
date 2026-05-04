@@ -696,6 +696,79 @@ section {
     color: var(--text-muted);
 }
 
+.academic-shortcut {
+    margin-top: 25px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: var(--bg-card);
+    padding: 12px 20px;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    cursor: pointer;
+    transition: var(--transition);
+    width: fit-content;
+}
+
+.academic-shortcut:hover {
+    border-color: var(--accent);
+    background: rgba(251, 191, 36, 0.05);
+    transform: translateX(10px);
+}
+
+.shortcut-icon {
+    width: 40px;
+    height: 40px;
+    background: rgba(251, 191, 36, 0.1);
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--accent);
+}
+
+.shortcut-icon i {
+    width: 20px;
+    height: 20px;
+}
+
+.shortcut-content {
+    display: flex;
+    flex-direction: column;
+}
+
+.shortcut-label {
+    font-weight: 600;
+    font-size: 0.95rem;
+    color: var(--text-main);
+}
+
+.shortcut-action {
+    font-size: 0.8rem;
+    color: var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 2px;
+}
+
+.academic-modal-body {
+    background: #1a1a1a !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    overflow: auto;
+}
+
+.full-transcript-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+}
+
 /* --- Testimonial --- */
 .testimonial {
     background: var(--bg-color);

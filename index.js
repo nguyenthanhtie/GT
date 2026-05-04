@@ -209,4 +209,33 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
+
+    // --- Academic Modal Logic ---
+    const academicModal = document.getElementById('academicModal');
+    const viewAcademicBtn = document.getElementById('viewAcademicBtn');
+    const closeAcademicBtn = document.getElementById('closeAcademicBtn');
+
+    if (academicModal && viewAcademicBtn && closeAcademicBtn) {
+        const academicOverlay = academicModal.querySelector('.modal-overlay');
+
+        const openAcademicModal = () => {
+            academicModal.classList.add('active');
+            document.body.classList.add('modal-open');
+        };
+
+        const closeAcademicModal = () => {
+            academicModal.classList.remove('active');
+            document.body.classList.remove('modal-open');
+        };
+
+        viewAcademicBtn.addEventListener('click', openAcademicModal);
+        closeAcademicBtn.addEventListener('click', closeAcademicModal);
+        academicOverlay.addEventListener('click', closeAcademicModal);
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && academicModal.classList.contains('active')) {
+                closeAcademicModal();
+            }
+        });
+    }
 });
