@@ -205,7 +205,7 @@ section {
 }
 
 .hero-text::after {
-    content: '</Software Engineer>';
+    content: '</Software Developer>';
     position: absolute;
     top: -20px;
     right: 20%;

@@ -93,12 +93,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Project Image Sub-Slider Logic ---
     const projectImages = {
         aurum: [
-            'image/Aurum/dashboard_overview_1777785204792.png',
-            'image/Aurum/chemistry_arena_overview_1777785496932.png',
-            'image/Aurum/arena_leaderboard_1777785509523.png',
-            'image/Aurum/periodic_table_1777785226372.png',
-            'image/Aurum/virtual_lab_center_1777785256233.png',
-            'image/Aurum/user_profile_character_1777785694006.png'
+            'image/Aurum/Screenshot 2026-06-12 144053.png',
+            'image/Aurum/Screenshot 2026-06-12 144110.png',
+            'image/Aurum/Screenshot 2026-06-12 144132.png',
+            'image/Aurum/Screenshot 2026-06-12 144150.png',
+            'image/Aurum/Screenshot 2026-06-12 144202.png',
+            'image/Aurum/Screenshot 2026-06-12 144218.png',
+            'image/Aurum/Screenshot 2026-06-12 144238.png'
         ],
         littlefish: [
             'image/LittleFish/31361382703354435724.jpg',
